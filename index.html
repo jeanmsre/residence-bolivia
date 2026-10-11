@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S'installer au Paraguay | La Réalité du Terrain avec Rémi</title>
-    <!-- Favicon Dynamique via Emoji Drapeau -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇵🇾</text></svg>">
+    <title>S'installer en Bolivie | Résidence Bolivia</title>
+    <!-- Favicon Local -->
+    <link rel="icon" type="image/png" href="/favicon.png">
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google Fonts -->
@@ -15,26 +15,25 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0c0a09; color: #f5f5f4; }
         
-        .prix-tag { color: #d97706 !important; }
+        .prix-tag { color: #fbbf24 !important; }
 
-        /* CARTES ET RECTANGLES EN FOND BLEU NUIT PERMANENT */
+        /* CARTES ET RECTANGLES EN FOND BLEU NUIT PERMANENT AVEC BORDURE JAUNE DORÉ */
         .card-target, 
         #vision .grid > div,
         #faq .faq-card,
-        #guide-autonomie .guide-card,
         .card-pack-option { 
             background-color: rgba(15, 23, 42, 0.75) !important; 
-            border: 1px solid rgba(217, 119, 6, 0.3) !important; 
+            border: 1px solid rgba(251, 191, 36, 0.35) !important; 
             backdrop-filter: blur(12px);
         }
         
         .card-target hr { border-color: rgba(255, 255, 255, 0.1) !important; }
         .card-target .bg-stone-100 { background-color: rgba(30, 41, 59, 0.8) !important; color: #f5f5f4 !important; }
-        .badge-optimisation { background-color: #78350f !important; color: #fef3c7 !important; border: 1px solid #b45309 !important; }
-        .encadre-delais { background-color: rgba(15, 23, 42, 0.9) !important; border: 1px solid rgba(217, 119, 6, 0.3) !important; }
+        .badge-optimisation { background-color: rgba(161, 98, 7, 0.4) !important; color: #fef08a !important; border: 1px solid #ca8a04 !important; }
+        .encadre-delais { background-color: rgba(15, 23, 42, 0.9) !important; border: 1px solid rgba(251, 191, 36, 0.35) !important; }
         .encadre-delais div { color: #fbbf24 !important; }
         .encadre-delais strong { color: #ffffff !important; }
-        .badge-incluse { background-color: rgba(120, 53, 15, 0.4) !important; border: 1px solid #b45309 !important; color: #fef3c7 !important; }
+        .badge-incluse { background-color: rgba(161, 98, 7, 0.3) !important; border: 1px solid #ca8a04 !important; color: #fef08a !important; }
 
         #faq button { color: #ffffff !important; }
         #faq button:hover { background-color: rgba(30, 41, 59, 0.5) !important; }
@@ -42,10 +41,20 @@
         #faq .faq-content p, #faq .faq-content li { color: #e7e5e4 !important; }
         #faq .faq-content strong { color: #ffffff !important; }
         #faq .border-t { border-color: rgba(255, 255, 255, 0.1) !important; }
-        .faq-alert-box { background-color: rgba(120, 53, 15, 0.5) !important; border: 1px solid #b45309 !important; color: #fef3c7 !important; }
+        .faq-alert-box { background-color: rgba(161, 98, 7, 0.4) !important; border: 1px solid #ca8a04 !important; color: #fef08a !important; }
         .faq-alert-box strong { color: #fbbf24 !important; }
 
         .hero-section { filter: none !important; -webkit-filter: none !important; }
+
+        /* ANIMATION FLUX SVG BANDEAU */
+        @keyframes dashFlow {
+            from { stroke-dashoffset: 40; }
+            to { stroke-dashoffset: 0; }
+        }
+        .animated-svg-line {
+            stroke-dasharray: 8, 8;
+            animation: dashFlow 1.2s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-[#0c0a09] text-stone-100 antialiased relative">
@@ -54,227 +63,135 @@
     <header class="sticky top-0 z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="font-bold text-lg tracking-tight text-white">🇵🇾 Rémi | Paraguay</div>
+                <img src="/favicon.png" alt="Résidence Bolivia" class="w-7 h-7 object-contain">
+                <div class="font-bold text-lg tracking-tight text-white">Résidence Bolivia</div>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-stone-300">
-                <a href="#guide-autonomie" class="hover:text-amber-400 transition">Packs Autonomie</a>
-                <a href="#offres" class="hover:text-amber-400 transition">Les Formules VIP</a>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-stone-300">
+                <a href="#offres" class="hover:text-amber-400 transition">Accompagnement Sur-Mesure</a>
                 <a href="#demarches" class="hover:text-amber-400 transition">Le Terrain</a>
                 <a href="#vision" class="hover:text-amber-400 transition">Ma Vision</a>
                 <a href="#faq" class="hover:text-amber-400 transition">FAQ</a>
             </nav>
             
             <div class="flex items-center gap-4">
-                <a href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20lance%20mon%20projet%20d%27expatriation%20au%20Paraguay%20%F0%9F%87%B5%F0%9F%87%BE" target="_blank" class="bg-amber-600 text-stone-950 px-4 py-2 rounded-xl text-sm font-bold hover:bg-amber-700 transition shadow-md shadow-amber-700/20">Lancer ton projet</a>
+                <a href="https://wa.me/595962374687?text=Bonjour%2C%20je%20lance%20mon%20projet%20d%27expatriation%20avec%20R%C3%A9sidence%20Bolivia%20%F0%9F%87%A7%F0%9F%87%B4" target="_blank" class="bg-amber-500 text-stone-950 px-4 py-2 rounded-xl text-sm font-bold hover:bg-amber-400 transition shadow-md shadow-amber-500/20">Lancer ton projet</a>
             </div>
         </div>
     </header>
 
     <!-- Section Hero -->
-    <section class="hero-section relative text-white pt-24 pb-28 px-4 bg-center border-b-4 border-amber-600 bg-stone-900" 
+    <section class="hero-section relative text-white pt-24 pb-28 px-4 bg-center border-b-4 border-amber-500 bg-stone-900" 
          style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-bg.jpg') !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important;">
         <div class="absolute inset-0 bg-black/30"></div>
         <div class="relative max-w-4xl mx-auto text-center space-y-6">
-            <div class="relative w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto border-4 border-amber-500 shadow-2xl flex items-center justify-center overflow-hidden">
-                <img src="avatar.jpg" alt="Rémi Paraguay" class="w-full h-full object-contain object-top">
+            <div class="relative w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto border-4 border-amber-400 shadow-2xl flex items-center justify-center overflow-hidden">
+                <img src="avatar.jpg" alt="Résidence Bolivia" class="w-full h-full object-contain object-top">
             </div>
-            <span class="inline-block bg-amber-600/40 text-white border border-amber-500/40 text-xs px-4 py-1 rounded-full font-bold uppercase tracking-wider backdrop-blur-sm">Ton expatriation, loin des clichés</span>
+            <span class="inline-block bg-amber-500/30 text-amber-300 border border-amber-400/50 text-xs px-4 py-1 rounded-full font-bold uppercase tracking-wider backdrop-blur-sm">Ton expatriation en Bolivie, loin des clichés</span>
             <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                S'installer au Paraguay.<br>
-                <span class="hero-titre-jaune text-amber-500">La réalité, sans intermédiaire.</span>
+                S'installer en Bolivie.<br>
+                <span class="hero-titre-jaune text-amber-400">La réalité du terrain, sans intermédiaire.</span>
             </h1>
             <p class="text-white text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
-                Tu as vu mes vidéos sur le terrain. Ce n'est pas l'usine ici. Juste les bonnes infos, les bons contacts et un accompagnement de A à Z (avec moi)
+                Découvre le potentiel exceptionnel de la Bolivie. Des opportunités concrètes, les bons contacts officiels et un accompagnement de A à Z à Santa Cruz & La Paz.
             </p>
         </div>
     </section>
 
-    <!-- SECTION GUIDES AUTONOMIE (NOUVELLE STRUCTURE : 3 OPTIONS) -->
-    <section id="guide-autonomie" class="py-16 bg-stone-900/50 border-b border-amber-600/10">
-        <div class="max-w-6xl mx-auto px-4 space-y-10">
-            <div class="text-center space-y-3">
-                <span class="text-xs font-bold bg-[#78350f] text-[#fef3c7] px-3 py-1 rounded-full uppercase tracking-wider inline-block">
-                    Tu préfères gérer toi-même tes démarches ?
-                </span>
-                <h2 class="text-2xl md:text-4xl font-bold text-white">
-                    Packs Autonomie Paraguay 🇵🇾
-                </h2>
-                <p class="text-stone-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-                    Des méthodes pas-à-pas claires et concrètes pour réussir ton expatriation seul et sans intermédiaire. Évite les erreurs administratives qui font perdre des mois.
-                </p>
-            </div>
-
-            <!-- Grille des 3 Options d'achat -->
-            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                
-                <!-- Option A : Résidence Temporaire -->
-                <div class="card-pack-option rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Option A</span>
-                        <h3 class="text-xl font-bold text-white">Guide Résidence Temporaire & Cédula</h3>
-                        <p class="text-stone-300 text-xs leading-relaxed">
-                            Tout le protocole exact pour faire ton entrée, préparer tes documents apostillés et obtenir ta résidence de 2 ans.
-                        </p>
-                        <div class="text-3xl font-bold text-amber-500 pt-2">47 € <span class="text-xs text-stone-400 font-normal">accès à vie</span></div>
-                        <hr class="border-white/10">
-                        <ul class="space-y-2 text-xs text-stone-300">
-    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Méthode complète résidence temporaire (V1)</li>
-    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Liste exacte des documents à fournir </li>
-    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Lien google maps & adresses exactes des lieux à Asunción</li>
-    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Contacts traducteurs & notaires vérifiés</li>
-    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Procédure de dépôt auprès de Migraciones</li>
-    <li class="flex items-center gap-2 text-amber-400 font-semibold"><span class="text-[#25D366] font-bold">⚡</span> Accès au groupe Telegram Privé</li>
-</ul>
-                    </div>
-                    <div class="pt-4">
-                        <a href="https://buy.stripe.com/6oU14m8gH3NSbym89k8k801" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">
-                            Obtenir ce Guide (47 €)
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Option B : Résidence Permanente -->
-                <div class="card-pack-option rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Option B</span>
-                        <h3 class="text-xl font-bold text-white">Guide Résidence Permanente & Cédula</h3>
-                        <p class="text-stone-300 text-xs leading-relaxed">
-                            Pour ceux qui touchent à la fin de leurs 2 ans de résidence temporaire et veulent convertir leur statut vers le permanent.
-                        </p>
-                        <div class="text-3xl font-bold text-amber-500 pt-2">47 € <span class="text-xs text-stone-400 font-normal">accès à vie</span></div>
-                        <hr class="border-white/10">
-                        <ul class="space-y-2 text-xs text-stone-300">
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Guide de transition Temporaire 👉 Permanente</li>
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Liste exacte des documents à fournir</li>
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Lien google maps & adresses exactes des lieux à Asunción</li>
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Procédure de renouvellement auprès de Migraciónes</li>
-                            <li class="flex items-center gap-2 text-amber-400 font-semibold"><span class="text-[#25D366] font-bold">⚡</span> Accès au groupe Telegram Privé</li>
-                        </ul>
-                    </div>
-                    <div class="pt-4">
-                        <a href="https://buy.stripe.com/fZu7sK40r1FKaui2P08k802" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">
-                            Obtenir ce Guide (47 €)
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Option C : Pack Intégral (Offre Recommandée) -->
-                <div class="card-pack-option rounded-2xl border-2 border-amber-500 p-6 md:p-8 shadow-2xl flex flex-col justify-between space-y-6 relative transform lg:-translate-y-2">
-                    <div class="absolute top-0 right-6 transform -translate-y-1/2 bg-amber-600 text-stone-950 text-[10px] md:text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                        Économise 17 €
-                    </div>
-                    <div class="space-y-4">
-                        <span class="badge-optimisation text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Offre Complète</span>
-                        <h3 class="text-xl font-bold text-white">Pack Intégral Autonomie</h3>
-                        <p class="text-stone-300 text-xs leading-relaxed">
-                            Accède immédiatement aux **deux guides complets** (Temporaire + Permanente) pour maîtriser tout ton parcours d'expatrié de A à Z.
-                        </p>
-                        <div class="space-y-1 pt-2">
-                            <div class="text-stone-400 text-xs line-through">Valeur séparée : 94 €</div>
-                            <div class="text-3xl font-bold text-amber-500">77 € <span class="text-xs text-stone-400 font-normal">pack complet</span></div>
-                        </div>
-                        <hr class="border-white/10">
-                        <ul class="space-y-2 text-xs text-stone-300">
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Guide Résidence Temporaire & Cédula (V1)</li>
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Guide Résidence Permanente</li>
-                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Accès illimité à toutes les futures mises à jour</li>
-                            <li class="flex items-center gap-2 text-amber-400 font-semibold"><span class="text-[#25D366] font-bold">⚡</span>Accès au Groupe Telegram Privé</li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 space-y-2">
-                        <a href="https://buy.stripe.com/4gM3cu9kLbgkcCq2P08k803" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">
-                            Obtenir le Pack Intégral (77 €)
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Offres VIP -->
+    <!-- Section Accompagnement Sur Mesure / Offres VIP -->
     <section id="offres" class="py-20 bg-[#0c0a09]/60">
         <div class="max-w-6xl mx-auto px-4 space-y-12">
             <div class="text-center space-y-3">
                 <h2 class="text-3xl font-bold tracking-tight text-white">Accompagnement Sur Mesure</h2>
-                <p class="text-stone-300">Sélectionne le nombre de personnes pour adapter automatiquement les tarifs de ton accompagnement VIP :</p>
+                <p class="text-stone-300">Sélectionne le nombre de personnes et la devise de ton choix :</p>
                 
-                <div class="inline-flex rounded-xl p-1.5 bg-stone-800/80 border border-stone-700/50 mt-4 shadow-inner">
-                    <button onclick="updatePrices(1)" id="btn-1" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer bg-amber-600 text-stone-950 shadow-md">1 pers.</button>
-                    <button onclick="updatePrices(2)" id="btn-2" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">2 pers.</button>
-                    <button onclick="updatePrices(3)" id="btn-3" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">3 pers.</button>
-                    <button onclick="updatePrices(4)" id="btn-4" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">4 pers.</button>
-                    <button onclick="updatePrices(5)" id="btn-5" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">5 pers.</button>
-                    <button onclick="updatePrices(6)" id="btn-6" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">6 pers.</button>
+                <div class="flex flex-wrap items-center justify-center gap-4 mt-4">
+                    <!-- Sélecteur de personnes -->
+                    <div class="inline-flex rounded-xl p-1.5 bg-stone-800/80 border border-stone-700/50 shadow-inner">
+                        <button onclick="setQuantity(1)" id="btn-1" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer bg-amber-500 text-stone-950 shadow-md">1 pers.</button>
+                        <button onclick="setQuantity(2)" id="btn-2" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">2 pers.</button>
+                        <button onclick="setQuantity(3)" id="btn-3" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">3 pers.</button>
+                        <button onclick="setQuantity(4)" id="btn-4" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">4 pers.</button>
+                        <button onclick="setQuantity(5)" id="btn-5" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">5 pers.</button>
+                        <button onclick="setQuantity(6)" id="btn-6" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">6 pers.</button>
+                    </div>
+
+                    <!-- Sélecteur de devise avec convertisseur en direct -->
+                    <div class="inline-flex rounded-xl p-1.5 bg-stone-800/80 border border-stone-700/50 shadow-inner">
+                        <button onclick="setCurrency('EUR')" id="btn-eur" class="btn-devise px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer bg-amber-500 text-stone-950 shadow-md">EUR (€)</button>
+                        <button onclick="setCurrency('USD')" id="btn-usd" class="btn-devise px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">USD ($)</button>
+                    </div>
                 </div>
+                <div id="rate-info" class="text-xs text-amber-400 font-medium h-4 mt-1"></div>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                <!-- Pack 1 : Résidence Temporaire -->
+                <!-- Pack 1 : Résidence Temporaire (1 an) -->
                 <div class="card-target rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
                     <div class="space-y-6">
                         <div>
                             <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Étape Initiale</span>
-                            <h3 class="text-xl font-bold text-white mt-3">Résidence Temporaire (2 ans) & Cédula</h3>
+                            <h3 class="text-xl font-bold text-white mt-3">Résidence Temporaire (1 an) & Carte d'identité bolivienne</h3>
                             <p class="text-stone-400 text-xs mt-1">Idéal pour s'installer légalement et tester le pays sans pression.</p>
                             
                             <div class="mt-4 space-y-1">
-                                <div class="prix-tag text-3xl font-bold"><span id="p1-total">1 800</span> € <span class="text-xs font-normal text-stone-400 lowercase">Total</span></div>
-                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p1-acompte">200</span>€ acompte + <span id="p1-place">1 600</span>€ sur place</div>
+                                <div class="prix-tag text-3xl font-bold"><span id="p1-total">2 000</span> <span class="curr-symbol">€</span> <span class="text-xs font-normal text-stone-400 lowercase">total</span></div>
+                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p1-acompte">500</span><span class="curr-symbol">€</span> acompte + <span id="p1-place">1 500</span><span class="curr-symbol">€</span> sur place</div>
                             </div>
                         </div>
                         <hr>
                         <ul class="space-y-3 text-sm text-stone-300">
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Validation stricte de tes documents en amont.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Traduction officielle en espagnol et légalisation incluses.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Accompagnement physique complet (Immigration, Interpol & autres).</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Dépôt sécurisé du dossier en ma présence.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Obtention finale de ta résidence.</li>
-                            <li class="flex items-start gap-2 text-amber-400 font-semibold"><span>🎁</span> Bonus : Ouverture de Compte Bancaire (Guaraní).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Validation stricte de tes documents en amont.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Traduction officielle en espagnol et légalisation incluses.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Accompagnement physique complet (DIGEMIG, SEGIP, Interpol/Police).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Dépôt sécurisé en présence de notre avocat partenaire.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Obtention finale de ta résidence de 1 an et ta carte d'identité bolivienne.</li>
                         </ul> 
                     </div>
 
-                    <div class="encadre-delais mt-6 p-4 rounded-xl text-center space-y-1">
+                    <div class="encadre-delais mt-6 p-4 rounded-xl text-center space-y-2">
                         <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Délai d’obtention :</div>
-                        <div class="text-xs text-stone-300">🪪 Résidence temporaire : <strong>3 mois</strong></div>
-                        <div class="text-xs text-stone-400 leading-tight">🪪 Cédula : <strong>30 à 45 jours</strong> après la résidence</div>
+                        <div class="text-xs text-stone-300">🪪 Résidence temporaire DIGEMIG :<br><strong>1 semaine</strong></div>
+                        <div class="text-xs text-stone-400 leading-tight">🪪 Carte d'identité bolivienne (SEGIP) :<br><strong>1 semaine</strong></div>
                     </div>
 
                     <div class="pt-6 space-y-3">
-                        <a id="link-p1" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20souhaite%20avoir%20des%20infos%20pour%20la%20formule%20R%C3%A9sidence%20Temporaire%20pour%201%20personne%20%F0%9F%AA%AA" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-semibold py-3 rounded-xl hover:bg-amber-700 transition text-sm">Choisir cette formule</a>
+                        <a id="link-p1" href="https://wa.me/595962374687?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20infos%20pour%20la%20formule%20R%C3%A9sidence%20Temporaire%201%20an%20Bolivie%20pour%201%20personne%20%F0%9F%AA%AA" target="_blank" class="block w-full text-center bg-amber-500 text-stone-950 font-semibold py-3 rounded-xl hover:bg-amber-400 transition text-sm">Choisir cette formule</a>
                     </div>
                 </div>
 
-                <!-- Pack 2 : Certificat de Résidence Fiscale -->
-                <div class="card-target rounded-2xl border-2 border-amber-500 p-6 md:p-8 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
-                    <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-amber-600 text-stone-950 text-xs px-4 py-1 rounded-full font-bold uppercase tracking-wider">Le choix recommandé</div>
+                <!-- Pack 2 : Résidence Temporaire (3 ans) -->
+                <div class="card-target rounded-2xl border-2 border-amber-400 p-6 md:p-8 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
+                    <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-amber-500 text-stone-950 text-xs px-4 py-1 rounded-full font-bold uppercase tracking-wider">Le choix recommandé</div>
                     <div class="space-y-6">
                         <div>
-                            <span class="badge-optimisation text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Optimisation complète</span>
-                            <h3 class="text-xl font-bold text-white mt-3">Résidence Fiscale</h3>
-                            <p class="text-stone-400 text-xs mt-1">Le document incontournable pour acter ton départ financier d'Europe.</p>
+                            <span class="badge-optimisation text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Sérénité Maximale</span>
+                            <h3 class="text-xl font-bold text-white mt-3">Résidence Temporaire (3 ans) & Carte d'identité bolivienne</h3>
+                            <p class="text-stone-400 text-xs mt-1">La formule idéale pour s'installer sereinement sur le long terme.</p>
                             
                             <div class="mt-4 space-y-1">
-                                <div class="prix-tag text-3xl font-bold"><span id="p2-total">2 500</span> € <span class="text-xs font-normal text-stone-400 lowercase">Total</span></div>
-                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p2-acompte">200</span>€ acompte + <span id="p2-place">2 300</span>€ sur place</div>
+                                <div class="prix-tag text-3xl font-bold"><span id="p2-total">3 000</span> <span class="curr-symbol">€</span> <span class="text-xs font-normal text-stone-400 lowercase">total</span></div>
+                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p2-acompte">1 000</span><span class="curr-symbol">€</span> acompte + <span id="p2-place">2 000</span><span class="curr-symbol">€</span> sur place</div>
                             </div>
-                            
-                            <p class="badge-incluse text-xs font-medium mt-2 px-2 py-1 rounded inline-block">✨ L'étape Temporaire est INCLUSE</p>
                         </div>
                         <hr>
                         <ul class="space-y-3 text-sm text-stone-300">
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> **Prise en charge totale :** Comprend la phase temporaire initiale.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Création et enregistrement de ton RUC (numéro fiscal).</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Justification de ta présence physique selon les critères légaux.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> PréPARATION et dépôt du dossier officiel auprès de la SET.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Obtention du certificat officiel de domiciliation fiscale.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Prise en charge des déclarations fiscales mensuelles (6 mois).</li>
-                            <li class="flex items-start gap-2 text-amber-400 font-semibold"><span>🎁</span> Bonus : Ouverture de Compte Bancaire (Guaraní).</li>
-                            <li class="flex items-start gap-2 text-amber-400 font-semibold"><span>🎁</span> Bonus : Accompagnement obtention Permis de conduire paraguayen.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Validation stricte de tes documents en amont.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Traduction officielle en espagnol et légalisation incluses.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Accompagnement physique complet (DIGEMIG, SEGIP, Interpol/Police).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Dépôt sécurisé en présence de notre avocat partenaire.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Obtention finale de ta résidence de 3 ans et ta carte d'identité bolivienne.</li>
                         </ul>
                     </div>
+
+                    <div class="encadre-delais mt-6 p-4 rounded-xl text-center space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Délai d’obtention :</div>
+                        <div class="text-xs text-stone-300">🪪 Résidence temporaire DIGEMIG :<br><strong>1 semaine</strong></div>
+                        <div class="text-xs text-stone-400 leading-tight">🪪 Carte d'identité bolivienne (SEGIP) :<br><strong>1 semaine</strong></div>
+                    </div>
+
                     <div class="pt-6 space-y-3">
-                        <a id="link-p2" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27Optimisation%20compl%C3%A8te%20avec%20la%20R%C3%A9sidence%20Fiscale%20pour%201%20personne%20%F0%9F%92%B2" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">Choisir cette formule</a>
+                        <a id="link-p2" href="https://wa.me/595962374687?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20R%C3%A9sidence%20Temporaire%203%20ans%20Bolivie%20pour%201%20personne%20%F0%9F%92%B2" target="_blank" class="block w-full text-center bg-amber-500 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-400 transition text-sm shadow-md">Choisir cette formule</a>
                     </div>
                 </div>
 
@@ -283,25 +200,32 @@
                     <div class="space-y-6">
                         <div>
                             <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Tranquillité absolue</span>
-                            <h3 class="text-xl font-bold text-white mt-3">Résidence Permanente</h3>
+                            <h3 class="text-xl font-bold text-white mt-3">Résidence Permanente & Carte d'identité bolivienne</h3>
                             <p class="text-stone-400 text-xs mt-1">Le pack pour obtenir ton statut définitif et t'installer à long terme.</p>
                             
                             <div class="mt-4 space-y-1">
-                                <div class="prix-tag text-3xl font-bold"><span id="p3-total">1 600</span> € <span class="text-xs font-normal text-stone-400 lowercase">Total</span></div>
-                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p3-acompte">200</span>€ acompte + <span id="p3-place">1 400</span>€ sur place</div>
+                                <div class="prix-tag text-3xl font-bold"><span id="p3-total">2 500</span> <span class="curr-symbol">€</span> <span class="text-xs font-normal text-stone-400 lowercase">total</span></div>
+                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p3-acompte">800</span><span class="curr-symbol">€</span> acompte + <span id="p3-place">1 700</span><span class="curr-symbol">€</span> sur place</div>
                             </div>
                         </div>
                         <hr>
                         <ul class="space-y-3 text-sm text-stone-300">
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Transition complète vers le statut permanent définitif.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Analyse et préparation de ton dossier de changement de statut.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Gestion complète des démarches et suivi auprès de la Migración.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Tous les frais administratifs et taxes locales inclus.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Obtention finale sécurisée de ta Cédula Permanente.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> <strong>Prérequis :</strong> Accessible après tes 3 ans de résidence temporaire.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Transition complète vers le statut permanent définitif.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Analyse et préparation de ton dossier de changement de statut.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Gestion complète des démarches et suivi auprès de la DIGEMIG.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 font-bold">✓</span> Obtention finale sécurisée de ta Carte d'identité bolivienne permanente (SEGIP).</li>
                         </ul>
                     </div>
+
+                    <div class="encadre-delais mt-6 p-4 rounded-xl text-center space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Délai d’obtention :</div>
+                        <div class="text-xs text-stone-300">🪪 Résidence permanente DIGEMIG :<br><strong>1 semaine</strong></div>
+                        <div class="text-xs text-stone-400 leading-tight">🪪 Carte d'identité bolivienne (SEGIP) :<br><strong>1 semaine</strong></div>
+                    </div>
+
                     <div class="pt-6 space-y-3">
-                        <a id="link-p3" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formule%20R%C3%A9sidence%20Permanente%20pour%201%20personne%20%F0%9F%94%92" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-semibold py-3 rounded-xl hover:bg-amber-700 transition text-sm">Choisir cette formule</a>
+                        <a id="link-p3" href="https://wa.me/595962374687?text=Bonjour%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formule%20R%C3%A9sidence%20Permanente%20Bolivie%20pour%201%20personne%20%F0%9F%94%92" target="_blank" class="block w-full text-center bg-amber-500 text-stone-950 font-semibold py-3 rounded-xl hover:bg-amber-400 transition text-sm">Choisir cette formule</a>
                     </div>
                 </div>
             </div>
@@ -309,27 +233,58 @@
     </section>
 
     <!-- Les Démarches Section -->
-    <section id="demarches" class="bg-stone-900 text-stone-100 py-20 px-4 border-t border-b border-amber-600/20">
+    <section id="demarches" class="bg-stone-900 text-stone-100 py-20 px-4 border-t border-b border-amber-500/20">
         <div class="max-w-5xl mx-auto space-y-12">
             <div class="text-center space-y-3">
-                <h2 class="text-3xl font-bold tracking-tight text-white">Ton expatriation en 3 étapes claires</h2>
-                <p class="text-stone-400 max-w-xl mx-auto">Zéro stress. On planifie tout ensemble avant ton départ.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Ton expatriation en Bolivie en 3 étapes</h2>
+                <p class="text-stone-400 max-w-xl mx-auto">Zéro stress. Tout est planifié et cadré avant ton départ.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="space-y-3 bg-stone-800/50 p-6 rounded-xl border border-stone-700/40">
-                    <div class="w-12 h-12 bg-amber-600/20 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto border border-amber-600/30">1</div>
-                    <h4 class="font-bold text-white text-lg">Envoi de tes documents</h4>
-                    <p class="text-sm text-stone-400">Tu réunis tes papiers en Europe, mes correspondants vérifient tout en amont et lancent les traductions officielles avant même que tu n'atterrisses.</p>
+            
+            <div class="space-y-6">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="space-y-3 bg-stone-800/50 p-6 rounded-xl border border-stone-700/40">
+                        <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto border border-amber-500/30">1</div>
+                        <h4 class="font-bold text-white text-lg">Préparation documents</h4>
+                        <p class="text-sm text-stone-400">Tu réunis tes documents requis en Europe. Nos correspondants boliviens vérifient tout en amont et préparent les traductions certifiées à Santa Cruz.</p>
+                    </div>
+                    <div class="space-y-3 bg-stone-800/50 p-6 rounded-xl border border-stone-700/40">
+                        <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto border border-amber-500/30">2</div>
+                        <h4 class="font-bold text-white text-lg">Résidence bolivienne</h4>
+                        <p class="text-sm text-stone-400">Durant ton court séjour sur place, nous gérons ensemble les enregistrements notarials, le passage aux services d'immatriculation et la soumission DIGEMIG.</p>
+                    </div>
+                    <div class="space-y-3 bg-stone-800/50 p-6 rounded-xl border border-stone-700/40">
+                        <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto border border-amber-500/30">3</div>
+                        <h4 class="font-bold text-white text-lg">Carte d'identité bolivienne</h4>
+                        <p class="text-sm text-stone-400">Une fois ton titre approuvé par la DIGEMIG, nous finalisons l'émission de ta carte d'identité d'étranger auprès du SEGIP pour te la remettre en main propre.</p>
+                    </div>
                 </div>
-                <div class="space-y-3 bg-stone-800/50 p-6 rounded-xl border border-stone-700/40">
-                    <div class="w-12 h-12 bg-amber-600/20 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto border border-amber-600/30">2</div>
-                    <h4 class="font-bold text-white text-lg">Ton séjour sur place</h4>
-                    <p class="text-sm text-stone-400">Tu passes quelques jours à Asunción. On gère ensemble les signatures, les rendez-vous officiels et le passage à Interpol en voiture.</p>
-                </div>
-                <div class="space-y-3 bg-stone-800/50 p-6 rounded-xl border border-stone-700/40">
-                    <div class="w-12 h-12 bg-amber-600/20 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto border border-amber-600/30">3</div>
-                    <h4 class="font-bold text-white text-lg">Réception de ta Cédula</h4>
-                    <p class="text-sm text-stone-400">Dès que la Migración valide ton dossier, nous récupérons ta carte nationale d'identité pour te la remettre en main propre.</p>
+
+                <!-- Bandeau fléché relié avec animation SVG dynamique -->
+                <div class="relative bg-slate-900/90 border border-amber-500/40 rounded-xl p-4 overflow-hidden shadow-lg">
+                    <!-- SVG d'arrière-plan avec ligne pointillée animée en flux continu -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40" preserveAspectRatio="none" viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="120" y1="50" x2="880" y2="50" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" class="animated-svg-line" />
+                    </svg>
+
+                    <div class="flex items-center justify-between relative z-10 text-xs md:text-sm font-bold text-amber-400 px-2 md:px-6">
+                        <span class="flex items-center gap-1.5 text-stone-200 bg-stone-900/80 px-3 py-1 rounded-lg border border-stone-700/60 shadow">
+                            <span class="text-amber-400 font-extrabold">◀</span> Point 1
+                        </span>
+                        
+                        <div class="flex items-center gap-2 px-5 py-2 rounded-full bg-stone-950/90 border border-amber-500/50 text-amber-300 font-extrabold tracking-wide uppercase text-xs md:text-sm shadow-md">
+                            <svg class="w-4 h-4 text-amber-400 animate-pulse hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                            <span>14 jours sur place</span>
+                            <svg class="w-4 h-4 text-amber-400 animate-pulse hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </div>
+
+                        <span class="flex items-center gap-1.5 text-stone-200 bg-stone-900/80 px-3 py-1 rounded-lg border border-stone-700/60 shadow">
+                            Point 3 <span class="text-amber-400 font-extrabold">▶</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,29 +293,29 @@
     <!-- La Vision Section -->
     <section id="vision" class="py-20 max-w-5xl mx-auto px-4 space-y-12">
         <div class="text-center space-y-3">
-            <h2 class="text-3xl font-bold tracking-tight text-white">Pourquoi j'ai choisi le Paraguay (et pourquoi tu devrais y penser)</h2>
-            <p class="text-stone-300">Une terre construite sur des valeurs de liberté réelle, de souveraineté et de pragmatisme.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Pourquoi la Bolivie ? (Et pourquoi y penser sérieusement)</h2>
+            <p class="text-stone-300">Un pays en pleine mutation, offrant un coût de vie abordable, une grande liberté d'entreprise et un potentiel d'investissement élevé.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
-                <div class="text-xs font-bold uppercase text-amber-400">0% d'impôt mondial</div>
-                <h3 class="text-lg font-bold text-white">Taxation Territoriale</h3>
-                <p class="text-sm text-stone-300 leading-relaxed">Le Paraguay applique une règle fiscale stricte : tes revenus générés en dehors des frontières ne subissent aucune imposition (0%). C'est le paradis des entrepreneurs web et freelances.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-500/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Dynamisme économique</div>
+                <h3 class="text-lg font-bold text-white">Santa Cruz de la Sierra : Le Hub Économique</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Veritable poumon économique de la Bolivie, Santa Cruz attire entrepreneurs et investisseurs internationaux grâce à sa croissance soutenue et son climat d'affaires dynamique.</p>
             </div>
-            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
-                <div class="text-xs font-bold uppercase text-amber-400">Réciprocité totale</div>
-                <h3 class="text-lg font-bold text-white">Une Nation Profondément Libérale</h3>
-                <p class="text-sm text-stone-300 leading-relaxed">Le pays offre aux résidents étrangers une égalité parfaite avec les locaux en matière de droits civils et de protection de ta pleine propriété.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-500/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Coût de la vie très attractif</div>
+                <h3 class="text-lg font-bold text-white">Pouvoir d'Achat Multiplié</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Grâce à un coût de la vie particulièrement bas en comparaison avec l'Europe, tu optimises tes coûts de fonctionnement, de logement et de style de vie au quotidien.</p>
             </div>
-            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
-                <div class="text-xs font-bold uppercase text-amber-400">Indépendance absolue</div>
-                <h3 class="text-lg font-bold text-white">Propriété Foncière & d'Entreprise à 100 %</h3>
-                <p class="text-sm text-stone-300 leading-relaxed">Pas besoin de prête-nom ou d'associé local obligatoire. Tu possèdes à 100 % tes terrains, tes maisons et les parts de tes sociétés.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-500/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Opportunités Immobilières</div>
+                <h3 class="text-lg font-bold text-white">Propriété Foncière Accessible</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Les étrangers peuvent devenir propriétaires en Bolivie avec une pleine sécurité juridique. Le marché immobilier offre des rendements locatifs très intéressants.</p>
             </div>
-            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
-                <div class="text-xs font-bold uppercase text-amber-400">Mobilité libre</div>
-                <h3 class="text-lg font-bold text-white">Liberté Géographique</h3>
-                <p class="text-sm text-stone-300 leading-relaxed">Le système ne t'enchaîne pas ici. Il n'est pas impératif de vivre à l'année sur le territoire pour maintenir tes avantages. Tu vis et travaille d'où tu veux.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-500/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Pied-à-terre stratégique</div>
+                <h3 class="text-lg font-bold text-white">Positionnement en Amérique du Sud</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">La Bolivie constitue un ancrage géographique stratégique au cœur du continent sud-américain pour diversifier son patrimoine et développer ses activités.</p>
             </div>
         </div>
     </section>
@@ -369,26 +324,24 @@
     <section id="faq" class="py-20 max-w-4xl mx-auto px-4 space-y-12">
         <div class="text-center space-y-4">
             <h2 class="text-3xl font-bold tracking-tight text-white">Questions Fréquentes</h2>
-            <p class="text-stone-300">Tout ce que tu dois savoir avant de lancer ton dossier.</p>
+            <p class="text-stone-300">Tout ce que tu dois savoir avant d'engager ton dossier en Bolivie.</p>
         </div>
 
         <div class="space-y-4">
             <!-- Question 1 -->
             <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
-                    <span>Quels sont les documents obligatoires à fournir et à faire apostiller ?</span>
+                    <span>Quels sont les documents obligatoires à fournir et apostiller pour la Bolivie ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <div class="p-5 text-sm text-stone-300 border-t border-stone-800 space-y-4 leading-relaxed">
-                        <p>Pour lancer valablement ton dossier, tu dois disposer d'un **passeport en cours de validité** et réunir les pièces suivantes dûment **apostillées** dans ton pays d'origine :</p>
+                        <p>Pour déposer ton dossier de résidence auprès de la <strong>DIGEMIG</strong>, tu dois présenter un <strong>passeport valide</strong> (au moins 6 mois) ainsi que les vérifications et certificats requis :</p>
                         <ul class="list-disc pl-5 space-y-1 text-stone-300">
-                            <li><strong>Acte de naissance</strong> (copie intégrale apostillée).</li>
-                            <li><strong>Casier judiciaire vierge</strong> (Bulletin n°3 apostillé).</li>
-                            <li><strong>Acte de mariage</strong> (apostillé, si tu es marié).</li>
+                            <li><strong>Certificat de santé & vérification d'antécédents</strong> (effectués ou légalisés sur place).</li>
                         </ul>
                         <div class="faq-alert-box p-3 rounded-lg text-xs font-medium transition">
-                            ⚠️ <strong>Règle importante :</strong> Si tu as résidé de manière continue pendant plus d’un an dans un autre pays au cours des 3 dernières années, tu dois obligatoirement fournir également le(s) casier(s) judiciaire(s) de ce pays, eux aussi apostillés.
+                            ⚠️ <strong>Règle importante :</strong> Tous les documents émis à l'étranger doivent être apostillés (Convention de La Haye) et faire l'objet d'une traduction officielle jurée en espagnol en Bolivie.
                         </div>
                     </div>
                 </div>
@@ -397,12 +350,12 @@
             <!-- Question 2 -->
             <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
-                    <span>Combien de temps dois-je rester sur place pour les démarches ?</span>
+                    <span>Combien de temps dois-je prévoir sur place pour les formalités ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
-                        Ta présence physique à Asunción est obligatoire pendant seulement 3 à 4 jours ouvrés. C’est le temps nécessaire pour passer les contrôles notariés, le passage au bureau d'Interpol et le dépôt officiel de ta signature. Une fois ces formalités accomplies, tu es libre de quitter le territoire.
+                        Compte environ 14 jours sur place à Santa Cruz de la Sierra. C'est le temps nécessaire pour passer les examens médicaux de routine, effectuer le relevé d'empreintes auprès de la police/Interpol et déposer officiellement le dossier aux guichets de la DIGEMIG et du SEGIP.
                     </p>
                 </div>
             </div>
@@ -410,12 +363,12 @@
             <!-- Question 3 -->
             <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
-                    <span>Comment faire si je ne parle pas espagnol ?</span>
+                    <span>Comment faire si je ne maîtrise pas parfaitement l'espagnol ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
-                        Ce n'est absolument pas un problème. Dès tes premiers pas administratifs au Paraguay, je t'accompagne personnellement à chaque rendez-vous. Nous mettons à ta disposition des traducteurs officiels agréés pour les signatures officielles. Tu ne seras jamais seul face à la bureaucratie locale.
+                        Aucune inquiétude. Je t'accompagne personnellement à chaque étape et à chaque rendez-vous administratif (DIGEMIG, SEGIP, Notaire). Nos traducteurs officiels partenaires s'assurent que tous tes documents juridiques sont rédigés sans la moindre faille.
                     </p>
                 </div>
             </div>
@@ -423,12 +376,12 @@
             <!-- Question 4 -->
             <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
-                    <span>Est-il possible d'obtenir un permis de conduire paraguayen ?</span>
+                    <span>Peut-on convertir son permis de conduire étranger en Bolivie ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
-                        Oui, tout à fait. Une fois que tu as obtenu ta Cédula (carte d'identité nationale), les démarches pour obtenir le permis de conduire local auprès de la municipalité sont extrêmement simples. Je peux te guider sur les formalités requises.
+                        Oui. Une fois que tu possèdes ta carte d'identité bolivienne d'étranger émise par le SEGIP, tu peux homologuer ou obtenir ton permis de conduire bolivien via les procédures municipales prévues.
                     </p>
                 </div>
             </div>
@@ -436,12 +389,12 @@
             <!-- Question 5 -->
             <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
-                    <span>Y a-t-il un dépôt bancaire ou un capital minimum exigé par l'État ?</span>
+                    <span>Quels sont les prérequis financiers pour obtenir la résidence en Bolivie ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
-                        Avec la législation actuelle sur la résidence temporaire (loi 6984), il n'y a plus d'exigence de dépôt de capital bloqué à la banque centrale comme c'était le cas auparavant. Le processus d'accès a été grandement simplifié au niveau financier.
+                        La Bolivie exige de démontrer des moyens de subsistance ou un projet légitime (activités indépendantes, rentier, investisseur, contrat ou travail à distance). Nous analysons ensemble ton profil pour structurer le dossier le plus solide possible aux yeux de la DIGEMIG.
                     </p>
                 </div>
             </div>
@@ -454,7 +407,7 @@
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
-                        Un acompte de 200 € par personne est demandé à la commande pour lancer l'étude de faisabilité de ton dossier, initier les démarches administratives et réserver tes créneaux. Le solde restant est payable une fois arrivé au Paraguay au moment du lancement officiel des rendez-vous physiques.
+                        Un acompte par personne selon la formule choisie est réglé au moment de la commande pour initier la vérification juridique de tes documents et réserver tes créneaux de prise en charge. Le solde est versé une fois arrivé en Bolivie lors du lancement effectif de tes démarches sur le terrain.
                     </p>
                 </div>
             </div>
@@ -462,13 +415,13 @@
     </section>
 
     <!-- CTA / Contact Section -->
-    <section id="contact" class="bg-stone-900 text-white py-20 px-4 text-center border-t-4 border-amber-600">
+    <section id="contact" class="bg-stone-900 text-white py-20 px-4 text-center border-t-4 border-amber-500">
         <div class="max-w-3xl mx-auto space-y-8">
-            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">On valide ton éligibilité ?</h2>
-            <p class="text-stone-300 font-light text-lg">Chaque profil est particulier (indépendant, retraité, digital nomad, entrepreneurs). Ne prends aucun risque inutile. Planifions un premier appel pour valider la faisabilité de ton dossier.</p>
-            <div class="inline-block bg-slate-900/90 p-6 rounded-2xl border border-amber-600/30 max-w-md mx-auto w-full space-y-4 shadow-xl">
-                <p class="text-sm font-semibold text-amber-400">📅 Réserve ton créneau de 15 minutes dès maintenant :</p>
-                <a href="https://calendly.com/vivreauparaguay-proton/15min/" target="_blank" class="block w-full bg-amber-600 text-stone-950 py-3 rounded-xl font-bold hover:bg-amber-700 transition text-center shadow-md">Accéder à mon calendrier privé</a>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">On valide ton éligibilité pour la Bolivie ?</h2>
+            <p class="text-stone-300 font-light text-lg">Chaque situation est unique (indépendant, retraité, entrepreneur, nomade). Ne prends aucun risque inutile. Planifions un premier appel pour valider ton projet d'installation en Bolivie.</p>
+            <div class="inline-block bg-slate-900/90 p-6 rounded-2xl border border-amber-500/30 max-w-md mx-auto w-full space-y-4 shadow-xl">
+                <p class="text-sm font-semibold text-amber-400">📅 Réserve ton entretien privé de 15 minutes :</p>
+                <a href="https://calendly.com/vivreauparaguay-proton/15min/" target="_blank" class="block w-full bg-amber-500 text-stone-950 py-3 rounded-xl font-bold hover:bg-amber-400 transition text-center shadow-md">Accéder à mon calendrier privé</a>
             </div>
         </div>
     </section>
@@ -476,7 +429,7 @@
     <!-- Footer -->
     <footer class="bg-stone-950 text-stone-500 py-12 text-center text-xs border-t border-stone-900">
         <div class="max-w-6xl mx-auto px-4">
-            <p>&copy; 2026 Rémi. Tous droit réservés. Accompagnement privé en coordination directe avec nos correspondants juridiques et avocats partenaires officiels au Paraguay.</p>
+            <p>&copy; 2026 Résidence Bolivia. Tous droits réservés. Accompagnement privé en Bolivie en coordination avec nos avocats et partenaires juridiques locaux agréés.</p>
         </div>
     </footer>
 
@@ -499,48 +452,121 @@
         });
     </script>
 
-    <!-- SCRIPT DE CALCUL DYNAMIQUE DES PRIX -->
+    <!-- SCRIPT DE CALCUL DYNAMIQUE DES PRIX ET DEVISE DYNAMIQUE (EUR/USD) -->
     <script>
+        let currentQty = 1;
+        let currentCurrency = 'EUR';
+        let eurToUsdRate = 1.08; // Taux par défaut en cas d'erreur API
+
         const pricingData = {
-            1: { p1: [200, 1600, 1800], p2: [200, 2300, 2500], p3: [200, 1400, 1600], label: "1 personne" },
-            2: { p1: [400, 2840, 3240], p2: [400, 4100, 4500], p3: [400, 2480, 2880], label: "2 personnes" },
-            3: { p1: [600, 3990, 4590], p2: [600, 5775, 6375], p3: [600, 3480, 4080], label: "3 personnes" },
-            4: { p1: [800, 4960, 5760], p2: [800, 7200, 8000], p3: [800, 4320, 5120], label: "4 personnes" },
-            5: { p1: [1000, 5750, 6750], p2: [1000, 8375, 9375], p3: [1000, 5000, 6000], label: "5 personnes" },
-            6: { p1: [1200, 6360, 7560], p2: [1200, 9300, 10500], p3: [1200, 5520, 6720], label: "6 personnes" }
+            1: { p1: [500, 1500, 2000], p2: [1000, 2000, 3000], p3: [800, 1700, 2500], label: "1 personne" },
+            2: { p1: [1000, 2600, 3600], p2: [2000, 3400, 5400], p3: [1600, 2900, 4500], label: "2 personnes" },
+            3: { p1: [1500, 3600, 5100], p2: [3000, 4700, 7700], p3: [2400, 4100, 6500], label: "3 personnes" },
+            4: { p1: [2000, 4400, 6400], p2: [4000, 5600, 9600], p3: [3200, 5300, 8500], label: "4 personnes" },
+            5: { p1: [2500, 5000, 7500], p2: [5000, 6300, 11300], p3: [4000, 6500, 10500], label: "5 personnes" },
+            6: { p1: [3000, 5400, 8400], p2: [6000, 6800, 12800], p3: [4800, 7700, 12500], label: "6 personnes" }
         };
 
-        function updatePrices(qty) {
-            const data = pricingData[qty];
+        // Récupération automatique quotidienne du taux de change officiel EUR -> USD
+        async function fetchExchangeRate() {
+            try {
+                const response = await fetch('https://open.er-api.com/v6/latest/EUR');
+                const data = await response.json();
+                if (data && data.rates && data.rates.USD) {
+                    eurToUsdRate = data.rates.USD;
+                }
+            } catch (err) {
+                console.warn('Utilisation du taux de change EUR/USD par défaut.', err);
+            }
+            updatePrices();
+        }
 
-            document.getElementById('p1-acompte').innerText = data.p1[0];
-            document.getElementById('p1-place').innerText = data.p1[1].toLocaleString();
-            document.getElementById('p1-total').innerText = data.p1[2].toLocaleString();
+        function setQuantity(qty) {
+            currentQty = qty;
+            updatePrices();
+        }
 
-            document.getElementById('p2-acompte').innerText = data.p2[0];
-            document.getElementById('p2-place').innerText = data.p2[1].toLocaleString();
-            document.getElementById('p2-total').innerText = data.p2[2].toLocaleString();
+        function setCurrency(curr) {
+            currentCurrency = curr;
+            updatePrices();
+        }
 
-            document.getElementById('p3-acompte').innerText = data.p3[0];
-            document.getElementById('p3-place').innerText = data.p3[1].toLocaleString();
-            document.getElementById('p3-total').innerText = data.p3[2].toLocaleString();
+        function updatePrices() {
+            const data = pricingData[currentQty];
+            const rate = currentCurrency === 'USD' ? eurToUsdRate : 1;
+            const symbol = currentCurrency === 'USD' ? '$' : '€';
 
-            document.getElementById('link-p1').href = `https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20souhaite%20avoir%20des%20infos%20pour%20la%20formule%20R%C3%A9sidence%20Temporaire%20pour%20${encodeURIComponent(data.label)}%20%F0%9F%AA%AA`;
-            document.getElementById('link-p2').href = `https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27Optimisation%20compl%C3%A8te%20avec%20la%20R%C3%A9sidence%20Fiscale%20pour%20${encodeURIComponent(data.label)}%20%F0%9F%92%B2`;
-            document.getElementById('link-p3').href = `https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formule%20R%C3%A9sidence%20Permanente%20pour%20${encodeURIComponent(data.label)}%20%F0%9F%94%92`;
+            // Mise à jour de la note de taux de change
+            const rateInfoEl = document.getElementById('rate-info');
+            if (currentCurrency === 'USD') {
+                rateInfoEl.innerText = `🔄 Taux du jour : 1 EUR = ${eurToUsdRate.toFixed(4)} USD`;
+            } else {
+                rateInfoEl.innerText = '';
+            }
 
+            // Calculs convertis
+            const p1Acompte = Math.round(data.p1[0] * rate);
+            const p1Place = Math.round(data.p1[1] * rate);
+            const p1Total = Math.round(data.p1[2] * rate);
+
+            const p2Acompte = Math.round(data.p2[0] * rate);
+            const p2Place = Math.round(data.p2[1] * rate);
+            const p2Total = Math.round(data.p2[2] * rate);
+
+            const p3Acompte = Math.round(data.p3[0] * rate);
+            const p3Place = Math.round(data.p3[1] * rate);
+            const p3Total = Math.round(data.p3[2] * rate);
+
+            // Mise à jour de l'affichage HTML
+            document.getElementById('p1-acompte').innerText = p1Acompte.toLocaleString();
+            document.getElementById('p1-place').innerText = p1Place.toLocaleString();
+            document.getElementById('p1-total').innerText = p1Total.toLocaleString();
+
+            document.getElementById('p2-acompte').innerText = p2Acompte.toLocaleString();
+            document.getElementById('p2-place').innerText = p2Place.toLocaleString();
+            document.getElementById('p2-total').innerText = p2Total.toLocaleString();
+
+            document.getElementById('p3-acompte').innerText = p3Acompte.toLocaleString();
+            document.getElementById('p3-place').innerText = p3Place.toLocaleString();
+            document.getElementById('p3-total').innerText = p3Total.toLocaleString();
+
+            // Mise à jour des symboles de devise
+            document.querySelectorAll('.curr-symbol').forEach(el => el.innerText = symbol);
+
+            // Mise à jour des liens WhatsApp
+            document.getElementById('link-p1').href = `https://wa.me/595962374687?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20infos%20pour%20la%20formule%20R%C3%A9sidence%20Temporaire%201%20an%20Bolivie%20pour%20${encodeURIComponent(data.label)}%20(${p1Total.toLocaleString()}%20${symbol})%20%F0%9F%AA%AA`;
+            document.getElementById('link-p2').href = `https://wa.me/595962374687?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20formule%20R%C3%A9sidence%20Temporaire%203%20ans%20Bolivie%20pour%20${encodeURIComponent(data.label)}%20(${p2Total.toLocaleString()}%20${symbol})%20%F0%9F%92%B2`;
+            document.getElementById('link-p3').href = `https://wa.me/595962374687?text=Bonjour%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formule%20R%C3%A9sidence%20Permanente%20Bolivie%20pour%20${encodeURIComponent(data.label)}%20(${p3Total.toLocaleString()}%20${symbol})%20%F0%9F%94%92`;
+
+            // Style actif pour le bouton Nombre de personnes
             document.querySelectorAll('.btn-personne').forEach(btn => {
-                btn.classList.remove('bg-amber-600', 'text-stone-950', 'shadow-md');
+                btn.classList.remove('bg-amber-500', 'text-stone-950', 'shadow-md');
                 btn.classList.add('text-stone-300', 'hover:text-white');
             });
-            const activeBtn = document.getElementById(`btn-${qty}`);
-            activeBtn.classList.remove('text-stone-300', 'hover:text-white');
-            activeBtn.classList.add('bg-amber-600', 'text-stone-950', 'shadow-md');
+            const activeBtnQty = document.getElementById(`btn-${currentQty}`);
+            if (activeBtnQty) {
+                activeBtnQty.classList.remove('text-stone-300', 'hover:text-white');
+                activeBtnQty.classList.add('bg-amber-500', 'text-stone-950', 'shadow-md');
+            }
+
+            // Style actif pour le bouton Devise
+            document.querySelectorAll('.btn-devise').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-stone-950', 'shadow-md');
+                btn.classList.add('text-stone-300', 'hover:text-white');
+            });
+            const activeBtnCurr = document.getElementById(`btn-${currentCurrency.toLowerCase()}`);
+            if (activeBtnCurr) {
+                activeBtnCurr.classList.remove('text-stone-300', 'hover:text-white');
+                activeBtnCurr.classList.add('bg-amber-500', 'text-stone-950', 'shadow-md');
+            }
         }
+
+        // Chargement du taux au lancement
+        window.addEventListener('DOMContentLoaded', fetchExchangeRate);
     </script>
 
     <!-- Bouton Flottant WhatsApp -->
-    <a href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20visite%20ton%20site%20et%20j%27aimerais%20te%20poser%20une%20question%20rapidement." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition transform hover:scale-105" title="Discuter sur WhatsApp">
+    <a href="https://wa.me/595962374687?text=Bonjour%2C%20je%20visite%20ton%20site%20et%20j%27aimerais%20te%20poser%20une%20question%20sur%20la%20Bolivie." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition transform hover:scale-105" title="Discuter sur WhatsApp">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
