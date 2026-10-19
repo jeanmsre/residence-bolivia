@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.residence-bolivia.co/sitemap.xml
