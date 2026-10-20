@@ -10,7 +10,7 @@
      Tant que ces deux valeurs sont vides, aucun suivi n'est chargé et
      aucune bannière de consentement n'apparaît.
      =================================================================== */
-  var GA4_ID = "G-63LBQPJCDD";
+  var GA4_ID = "";
   var META_PIXEL_ID = "";
 
   /* ---------- En-tête : fond plein au défilement ---------- */
