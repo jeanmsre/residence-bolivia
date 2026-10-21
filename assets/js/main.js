@@ -84,11 +84,12 @@
   if (chartBox) drawChart(chartBox);
 
   function drawChart(box) {
-    var months = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+    var EN = (document.documentElement.lang || "").indexOf("en") === 0;
+    var months = EN ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] : ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
     var series = [
       { name: "Santa Cruz", color: "#D9480F", data: [26.9, 26.4, 26.2, 24.8, 22.1, 20.9, 20.8, 23.0, 25.1, 26.4, 26.6, 26.6] },
       { name: "Paris", color: "#2F6FD1", data: [4.6, 5.2, 8.3, 11.3, 14.9, 18.2, 20.5, 20.2, 16.5, 12.4, 7.9, 5.2] },
-      { name: "Montréal", color: "#1E8A5A", data: [-9.2, -7.9, -2.0, 6.2, 13.8, 19.0, 21.7, 20.6, 16.0, 8.8, 2.2, -4.9] }
+      { name: EN ? "Montreal" : "Montréal", color: "#1E8A5A", data: [-9.2, -7.9, -2.0, 6.2, 13.8, 19.0, 21.7, 20.6, 16.0, 8.8, 2.2, -4.9] }
     ];
     var W = Math.max(320, Math.round(box.clientWidth || 880)), small = W < 600;
     var H = small ? 280 : 340, m = { t: 16, r: small ? 84 : 108, b: 34, l: small ? 34 : 44 };
@@ -100,7 +101,7 @@
     var svg = document.createElementNS(ns, "svg");
     svg.setAttribute("viewBox", "0 0 " + W + " " + H);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Températures moyennes mensuelles : Santa Cruz entre 20,8 et 26,9 °C toute l'année, Paris entre 4,6 et 20,5 °C, Montréal entre -9,2 et 21,7 °C.");
+    svg.setAttribute("aria-label", EN ? "Average monthly temperatures: Santa Cruz between 20.8 and 26.9 °C all year, Paris between 4.6 and 20.5 °C, Montreal between -9.2 and 21.7 °C." : "Températures moyennes mensuelles : Santa Cruz entre 20,8 et 26,9 °C toute l'année, Paris entre 4,6 et 20,5 °C, Montréal entre -9,2 et 21,7 °C.");
     function el(tag, attrs, parent) {
       var e = document.createElementNS(ns, tag);
       for (var k in attrs) e.setAttribute(k, attrs[k]);
@@ -147,7 +148,7 @@
     var tip = document.createElement("div");
     tip.className = "chart-tip";
     box.appendChild(tip);
-    var full = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    var full = EN ? ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] : ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
     function show(i) {
       hover.setAttribute("x1", x(i)); hover.setAttribute("x2", x(i)); hover.setAttribute("opacity", 1);
       dotsGroups.forEach(function (g) {
@@ -156,7 +157,7 @@
       });
       var html = "<b>" + full[i] + "</b>";
       series.forEach(function (s) {
-        html += '<div class="row"><span><i style="background:' + s.color + '"></i>' + s.name + "</span><strong>" + String(s.data[i]).replace(".", ",") + " °C</strong></div>";
+        html += '<div class="row"><span><i style="background:' + s.color + '"></i>' + s.name + "</span><strong>" + (EN ? s.data[i].toFixed(1) : String(s.data[i]).replace(".", ",")) + " °C</strong></div>";
       });
       tip.innerHTML = html;
       var rect = svg.getBoundingClientRect();

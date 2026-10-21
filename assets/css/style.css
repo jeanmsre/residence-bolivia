@@ -498,3 +498,13 @@ figure{margin:0}
   .filters::-webkit-scrollbar{display:none}
   .chip{flex:none}
 }
+/* Sélecteur de langue : une pastille vers l'autre langue */
+.lang-switch{display:flex;flex:none}
+.lang-switch a[aria-current]{display:none}
+.lang-switch a{display:block;min-width:42px;padding:.6em .8em;border-radius:999px;border:1px solid rgba(255,255,255,.5);font:600 .78rem/1 var(--sans);letter-spacing:.1em;text-align:center;text-decoration:none;color:#fff;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.lang-switch a:hover{background:#fff;color:var(--forest);border-color:#fff}
+.site-header.solid .lang-switch a,.site-header.always-solid .lang-switch a{color:var(--forest);border-color:rgba(14,58,43,.28)}
+.site-header.solid .lang-switch a:hover,.site-header.always-solid .lang-switch a:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+@media (min-width:1241px){.site-header .bar .nav{margin-left:auto}.site-header .lang-switch{margin-left:-4px}}
+@media (max-width:1240px){.site-header .lang-switch{margin-left:auto}.site-header .menu-btn{order:2}}
+@media (max-width:560px){.site-header .bar{gap:10px}.site-header .menu-btn{margin-right:-8px}}
